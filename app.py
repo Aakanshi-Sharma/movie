@@ -4,7 +4,7 @@ import bz2
 import requests
 
 movies_lists = pickle.load(open("movies.pkl", "rb"))
-similarity = pickle.load(open("similarity.pkl", "rb"))
+similarity = pickle.load(bz2.BZ2File("similarity.pkl", "rb"))
 movies_list = movies_lists["title"].values
 
 
