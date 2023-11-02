@@ -2,8 +2,10 @@ import streamlit as st
 import pickle
 import bz2
 import requests
+import pandas as pd
 
-movies_lists = pickle.load(open("movies.pkl", "rb"))
+movies_lists = pd.read_pickle(open("movies.pkl", "rb"))
+# movies_lists = pickle.load(open("movies.pkl", "rb"))
 similarity = pickle.load(bz2.BZ2File("similarity.pkl", "rb"))
 movies_list = movies_lists["title"].values
 
